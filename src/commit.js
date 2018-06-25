@@ -87,13 +87,13 @@ function main() {
     'function': ''
   }
   var tx = new neb.Transaction({
-     chainID: 1001,
+     chainID: 1,
      from: account,
      to: account.getAddressString(),
      value: 0,
      nonce: nitFileData.used_nonce + 1,
      gasPrice: 1000000,
-     gasLimit: 2000000000,
+     gasLimit: 2000000,
      contract: diffStorageContract
   });
 

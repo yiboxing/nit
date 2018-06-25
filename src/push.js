@@ -71,7 +71,7 @@ function pushCommit() {
         'X-DevTools-Emulate-Network-Conditions-Client-Id' : 'DBD82AD3541AFF90B7FCF164CDC1757A',
         'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
       },
-      url:     'https://testnet.nebulas.io/v1/user/rawtransaction',
+      url:     'https://mainnet.nebulas.io/v1/user/rawtransaction',
       body:    '{"data":"' + nitFileData.localCommits[pushProgress].rawTx + '"}'
     }, pushCommitCallback);
   }
@@ -101,13 +101,13 @@ function registerCommits() {
     'args': flatCommitLog
   }
   var tx = new neb.Transaction({
-     chainID: 1001,
+     chainID: 1,
      from: account,
      to: nitFileData.repo_address,
      value: 0,
      nonce: nitFileData.used_nonce + 1,
      gasPrice: 1000000,
-     gasLimit: 2000000000,
+     gasLimit: 2000000,
      contract: contractCall
   });
 
@@ -118,20 +118,20 @@ function registerCommits() {
       'X-DevTools-Emulate-Network-Conditions-Client-Id' : 'DBD82AD3541AFF90B7FCF164CDC1757A',
       'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
     },
-    url:     'https://testnet.nebulas.io/v1/user/rawtransaction',
+    url:     'https://mainnet.nebulas.io/v1/user/rawtransaction',
     body:    '{"data":"' + tx.toProtoString() + '"}'
   }, registerCommitCallback);
 }
 
 function registerCommitCallback(error, response, body) {
   console.log(chalk.yellow(body));
-  console.log(chalk.white('-----------------------  ------------------------------------'))
+  console.log(chalk.white('-------------------------------------------------------------'))
   console.log(chalk.white('|                                                           |'))
   console.log(chalk.white('| Pushing to repository ' + nitFileData.repo_address + ' |'));
   console.log(chalk.white('|                                                           |'))
   console.log(chalk.white('-------------------------------------------------------------'))
 
-  console.log(chalk.white("https://explorer.nebulas.io/#/testnet/tx/" + JSON.parse(body).result.txhash))
+  console.log(chalk.white("https://explorer.nebulas.io/#/mainnet/tx/" + JSON.parse(body).result.txhash))
   console.log(chalk.white('Push success'))
 }
 

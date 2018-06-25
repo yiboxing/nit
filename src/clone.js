@@ -48,7 +48,7 @@ function main() {
       'X-DevTools-Emulate-Network-Conditions-Client-Id' : 'DBD82AD3541AFF90B7FCF164CDC1757A',
       'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
     },
-    url:     'https://testnet.nebulas.io/v1/user/accountstate',
+    url:     'https://mainnet.nebulas.io/v1/user/accountstate',
     body:    '{"address":"' + account.getAddressString() + '"}'
   }, onGetAccountStatus);
 
@@ -76,7 +76,7 @@ function onGetAccountStatus(error, response, body) {
       'X-DevTools-Emulate-Network-Conditions-Client-Id' : 'DBD82AD3541AFF90B7FCF164CDC1757A',
       'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
     },
-    url:     'https://testnet.nebulas.io/v1/user/call',
+    url:     'https://mainnet.nebulas.io/v1/user/call',
     body:    JSON.stringify(body)
   }, onGetCommitLog);
 }
@@ -126,7 +126,7 @@ function pullNextCommit() {
       'X-DevTools-Emulate-Network-Conditions-Client-Id' : 'DBD82AD3541AFF90B7FCF164CDC1757A',
       'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36'
     },
-    url:     'https://testnet.nebulas.io/v1/user/call',
+    url:     'https://mainnet.nebulas.io/v1/user/call',
     body:    JSON.stringify(body)
   }, onGetCommitData);
 }
