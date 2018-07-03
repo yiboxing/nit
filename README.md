@@ -23,13 +23,13 @@ npm install
 nit init
 
 ## To stage a file:
-nit add <file name>
+nit add [file name]
 
 ## To commit:
-nit commit <commit message>
+nit commit [commit message]
 
 ## To push to repository:
 nit push
 
 ## To clone a repository
-nit clone <nitRepo contract address>
+nit clone [nitRepo contract address]
